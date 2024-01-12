@@ -403,6 +403,7 @@ def convert_office_doc(
         output_directory,
         input_filename,
     ]
+    print("unstructured partition common soffice command", command)
     try:
         process = subprocess.Popen(
             command,
