@@ -26,8 +26,8 @@ RUN python3.10 -m pip install pip==${PIP_VERSION} && \
   dnf -y groupremove "Development Tools" && \
   dnf clean all
 
-RUN python3.10 -c "import nltk; nltk.download('punkt')" && \
-  python3.10 -c "import nltk; nltk.download('averaged_perceptron_tagger')"
+RUN python3.10 -c "import nltk; nltk.download('punkt', download_dir='/tmp')" && \
+  python3.10 -c "import nltk; nltk.download('averaged_perceptron_tagger', download_dir='/tmp')"
 
 FROM deps as code
 
